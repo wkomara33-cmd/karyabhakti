@@ -53,7 +53,7 @@ Route::middleware('auth')->group(function () {
         Route::put('/pengeluaran/{keuangan}', [KeuanganController::class, 'updatePengeluaran'])->name('pengeluaran.update');
         Route::delete('/pengeluaran/{keuangan}', [KeuanganController::class, 'destroyPengeluaran'])->name('pengeluaran.destroy');
 
-        // Export Excel dari laporan
-        Route::get('/laporan/export-excel', [KeuanganController::class, 'exportExcel'])->name('laporan.exportExcel');
+        // Export PDF dari laporan
+        Route::get('/laporan/export-pdf', [KeuanganController::class, 'exportPdf'])->name('laporan.exportPdf');
     });
 });

@@ -40,14 +40,12 @@ return [
 
     'providers' => ServiceProvider::defaultProviders()->merge([
         Barryvdh\DomPDF\ServiceProvider::class,
-        Maatwebsite\Excel\ExcelServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         App\Providers\AppServiceProvider::class,
     ])->toArray(),
 
     'aliases' => Facade::defaultAliases()->merge([
         'PDF' => Barryvdh\DomPDF\Facade\Pdf::class,
-        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ])->toArray(),
 
 ];

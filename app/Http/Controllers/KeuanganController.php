@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Keuangan;
-use App\Exports\KeuanganExport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Barryvdh\DomPDF\Facade\Pdf;
-use Maatwebsite\Excel\Facades\Excel;
 use Carbon\Carbon;
 
 class KeuanganController extends Controller
@@ -320,22 +318,6 @@ class KeuanganController extends Controller
 
         $fileName = 'Laporan_Keuangan_' . date('Ymd_His') . '.pdf';
         return $pdf->stream($fileName);
-    }
-
-    /** Export laporan ke Excel */
-    public function exportExcel(Request $request)
-    {
-        $periode   = $request->input('periode', 'bulanan');
-        $bulan     = $request->input('bulan', now()->month);
-        $tahun     = $request->input('tahun', now()->year);
-        $minggu    = $request->input('minggu');
-        $startDate = $request->input('start_date');
-        $endDate   = $request->input('end_date');
-
-        [$startDate, $endDate] = $this->resolvePeriode($periode, $bulan, $tahun, $minggu, $startDate, $endDate);
-
-        $fileName = 'Laporan_Keuangan_' . date('Ymd_His') . '.xlsx';
-        return Excel::download(new KeuanganExport($startDate, $endDate, null, null), $fileName);
     }
 
     // =========================================================

@@ -29,7 +29,7 @@ Aplikasi web modern berbasis **Laravel 12** yang dirancang untuk mengelola keang
 - **Pencatatan Kas Masuk & Keluar**: Catat penerimaan (iuran anggota, donasi, sponsor) dan pengeluaran operasional dilengkapi bukti nota/transaksi.
 - **Perhitungan Saldo Otomatis (Real-time Running Balance)**: Saldo berjalan dihitung dan diperbarui secara otomatis menggunakan Eloquent Model Events.
 - **Filter Laporan**: Filter berdasarkan rentang tanggal/bulan, tipe transaksi (pemasukan/pengeluaran), dan kategori.
-- **Export Laporan PDF & Excel**: Unduh laporan buku kas dalam format PDF (`barryvdh/laravel-dompdf`) atau spreadsheet Excel XLSX (`maatwebsite/excel`).
+- **Export Laporan PDF**: Unduh laporan buku kas dalam format PDF (`barryvdh/laravel-dompdf`).
 - **Akses Anggota**: Anggota dapat melihat transparansi saldo kas dan ringkasan arus kas secara read-only.
 
 ### 5. 📢 Papan Pengumuman
@@ -46,7 +46,6 @@ Aplikasi web modern berbasis **Laravel 12** yang dirancang untuk mengelola keang
 - **Packages**:
   - `spatie/laravel-permission`: Manajemen Peran & Hak Akses
   - `barryvdh/laravel-dompdf`: Generator Laporan PDF
-  - `maatwebsite/excel`: Generator Laporan Excel
 
 ---
 
